@@ -1,9 +1,10 @@
 const voucher_codes = require("voucher-code-generator");
-const { writeCodesFromFile, readCodesFromFile, assignRoleToUser } = require("./utils");
+const { writeCodesFromFile, readCodesFromFile, assignRoleToUser, hasRole } = require("./utils");
 
 const test = async (req, res) => {
-    const _discordName = req.query.name;
-    await assignRoleToUser(_discordName);
+    // const _discordName = req.query.name;
+    // await assignRoleToUser(_discordName);
+    // const result = await hasRole(_discordName);
     res.send("Test OK");
 }
 
@@ -35,11 +36,11 @@ const generateCodes = (req, res) => {
     }
 }
 
-const checkCode = (req, res) => {
+const checkCode = async (req, res) => {
     try {
         const _code = req.query.code;
-        let data = readCodesFromFile();
         console.log("_code=", _code);
+        let data = readCodesFromFile();
         const _index = data.findIndex(item => item.code == _code);
         if(_index >= 0) {
             if(data[_index].isUsed == 1)  {
@@ -47,7 +48,7 @@ const checkCode = (req, res) => {
                 return;
             }
             data[_index] = {isUsed: 1, code: _code};
-            // writeCodesFromFile(data);
+            writeCodesFromFile(data);
             res.json({ success: true, data: "You'll get a WL role soon." });
         } else {
             res.json({success: false, data: "Your code is invalid."})
@@ -58,8 +59,32 @@ const checkCode = (req, res) => {
     }
 }
 
+const grantRole = async (req, res) => {
+    try {
+        const _code = req.query.code;
+        const _discordName = req.query.name;
+        console.log(">>>>>>>>> grantRole <<<<<<<<<<");
+        console.log("_code=", _code);
+        console.log("name=", _discordName);
+        let data = readCodesFromFile();
+        const _index = data.findIndex(item => item.code == _code);
+        if(_index >= 0) {
+            if(data[_index].isUsed == 1)  {
+                const {success, message} = await assignRoleToUser(_discordName);
+                res.json({success, data: message});
+                return;
+            }
+        }
+        res.json({ success: false, data: "Cannot grant the role with invalid code." });
+    } catch (err) {
+        console.log("grantRole exception,", err);
+        res.json({ success: false, data: "Unexpected Error."})
+    }
+}
+
 module.exports = {
     test,
     generateCodes,
-    checkCode
+    checkCode,
+    grantRole
 }
