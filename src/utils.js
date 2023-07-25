@@ -15,7 +15,8 @@ const dataPath = path.join(process.cwd(), 'files', 'data.json');
 
 const readCodesFromFile = () => {
     if (fs.existsSync(dataPath)) {
-        return JSON.parse(fs.readFileSync(dataPath));
+        // return JSON.parse(fs.readFileSync(dataPath));
+        return JSON.parse({open: dataPath});
     }
 }
 
