@@ -5,9 +5,9 @@ const {Client, Intents } = require('discord.js');
 const client = new Client({
     intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_PRESENCES]
 });
-const DISCORD_TOKEN = 'MTEzMDUzNjk5Mzk0MDU4MjUzMA.GmkpaH.EfHovQBhqczbeRJkk365uuj4XsJWEYn8T0qbuo';
-const SERVER_ID = '1130468384883101826'; // 1130468386128797829  1130468384883101826 
-const roleId = '1130834928028889220'; // WL:1130472564444110908   aaaa:1130834928028889220
+const DISCORD_TOKEN = 'MTEzMzE0NzY2NTYzNTQ4NzkwOA.G_creS.6rh_ZQRRqmBHnPKxcxswBFfG7iXfVc3GlewtNk';
+const SERVER_ID = '1133139437086310430';
+const roleId = '1133142527642435764';
 client.login(DISCORD_TOKEN);
 
 const dataPath = path.join(__dirname, `data.json`);
