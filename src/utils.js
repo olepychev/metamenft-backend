@@ -10,7 +10,8 @@ const SERVER_ID = '1130468384883101826'; // 1130468386128797829  113046838488310
 const roleId = '1130834928028889220'; // WL:1130472564444110908   aaaa:1130834928028889220
 client.login(DISCORD_TOKEN);
 
-const dataPath = path.join(__dirname, `data.json`);
+// const dataPath = path.join(__dirname, `data.json`);
+const dataPath = path.join('./data.json');
 
 const readCodesFromFile = () => {
     if (fs.existsSync(dataPath)) {
