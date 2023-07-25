@@ -55,7 +55,7 @@ const checkCode = async (req, res) => {
         }
     } catch (err) {
         console.log("setCodeUsed exception,", err);
-        res.json({ success: false, data: "Unexpected Error."})
+        res.json({ success: false, data: err})
     }
 }
 
