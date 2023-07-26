@@ -73,8 +73,8 @@ const assignRoleToUser = async (username) => {
     } catch (err) {
         console.error("Error assigning role ", err);
         return {
-            success: true,
-            message: "Exception error occured. Please try again later."
+            success: false,
+            message: err
         }
     }
 }
