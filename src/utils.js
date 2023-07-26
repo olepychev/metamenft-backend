@@ -38,7 +38,7 @@ const readCodesFromFile = () => {
 }
 
 const writeCodesFromFile = (json) => {
-    fs.writeFileSync(dataPath, JSON.stringify(json));
+    // fs.writeFileSync(dataPath, JSON.stringify(json));
 }
 
 const assignRoleToUser = async (username) => {
