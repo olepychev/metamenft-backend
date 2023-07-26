@@ -71,7 +71,7 @@ const assignRoleToUser = async (username) => {
             })
             return {
                 success: true,
-                message: member
+                message: "You get the WL role successfully!"
             }
         }
         return {
