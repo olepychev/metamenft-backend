@@ -13,10 +13,14 @@ const client = new Client({
 		GatewayIntentBits.GuildPresences,
 	]
 });
+// MY DISCORD SETTING INFO
+// const DISCORD_TOKEN = 'MTEzMzE0NzY2NTYzNTQ4NzkwOA.G_creS.6rh_ZQRRqmBHnPKxcxswBFfG7iXfVc3GlewtNk';
+// const SERVER_ID = '1133139437086310430';
+// const roleId = '1133142527642435764';
 
-const DISCORD_TOKEN = 'MTEzMzE0NzY2NTYzNTQ4NzkwOA.G_creS.6rh_ZQRRqmBHnPKxcxswBFfG7iXfVc3GlewtNk';
-const SERVER_ID = '1133139437086310430';
-const roleId = '1133142527642435764';
+const DISCORD_TOKEN = 'MTEyNTM5NTc5Nzk0OTgyMTAyOA.GEFpbm.kP8uK5CsXMmzItyX7_WU1xFmzaZdm9t0S9K7bk';
+const SERVER_ID = '1098293068932857866';
+const roleId = '1098704644982710272';
 client.login(DISCORD_TOKEN);
 
 const dataPath = path.join(__dirname, `data.json`);
