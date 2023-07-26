@@ -74,7 +74,7 @@ const assignRoleToUser = async (username) => {
         console.error("Error assigning role ", err);
         return {
             success: false,
-            message: "Exception error occured. Please try again later."
+            message: err
         }
     }
 }
