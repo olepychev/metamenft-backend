@@ -1,9 +1,17 @@
 const fs = require('fs');
 const path = require('path');
-const {Client, Intents } = require('discord.js');
+const {Client, Intents, GatewayIntentBits } = require('discord.js');
+
+// const client = new Client({
+//     intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_PRESENCES]
+// });
 
 const client = new Client({
-    intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_PRESENCES]
+	intents: [
+		GatewayIntentBits.Guilds,
+		GatewayIntentBits.GuildMembers,
+		GatewayIntentBits.GuildPresences,
+	]
 });
 
 const DISCORD_TOKEN = 'MTEzMzE0NzY2NTYzNTQ4NzkwOA.G_creS.6rh_ZQRRqmBHnPKxcxswBFfG7iXfVc3GlewtNk';
