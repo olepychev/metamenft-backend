@@ -13,6 +13,11 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(express.json());
 
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    next();
+});
+
 app.use("/api", api);
 
 const server = http.createServer(app);
