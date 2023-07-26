@@ -71,7 +71,7 @@ const assignRoleToUser = async (username) => {
             })
             return {
                 success: true,
-                message: "You get the WL role successfully!"
+                message: member
             }
         }
         return {
@@ -82,7 +82,7 @@ const assignRoleToUser = async (username) => {
         console.error("Error assigning role ", err);
         return {
             success: false,
-            message: err
+            message: "Exception error occured. Please try again later."
         }
     }
 }
