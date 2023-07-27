@@ -13,8 +13,10 @@ const client = new Client({
 		GatewayIntentBits.GuildPresences,
 	]
 });
+
 // MY DISCORD SETTING INFO
-const DISCORD_TOKEN = 'MTEzMzE0NzY2NTYzNTQ4NzkwOA.G_creS.6rh_ZQRRqmBHnPKxcxswBFfG7iXfVc3GlewtNk';
+// const DISCORD_TOKEN = 'MTEzMzE0NzY2NTYzNTQ4NzkwOA.G_creS.6rh_ZQRRqmBHnPKxcxswBFfG7iXfVc3GlewtNk';
+const DISCORD_TOKEN = 'MTAyNTIzMzQ1ODM1MzY2ODEyNw.Gkc-sx.epnLxTfOYtmA5GYbYr42GkFSEidG-KzmlcudtI';
 const SERVER_ID = '1133139437086310430';
 const roleId = '1133142527642435764';
 
