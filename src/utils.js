@@ -84,10 +84,9 @@ const assignRoleToUser = async (username) => {
             message: "You can't get the WL role. Please contact with the support team."
         }
     } catch (err) {
-        console.error("Error assigning role ", { caa: client });
         return {
             success: false,
-            message: err
+            message: client
         }
     }
 }
