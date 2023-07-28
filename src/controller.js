@@ -82,9 +82,20 @@ const grantRole = async (req, res) => {
     }
 }
 
+const getUserList = async (req, res) => {
+    try {
+        const {success, data} = await assignRoleToUser(_discordName);
+        res.json({success, data: data});
+    } catch (err) {
+        console.log("grantRole exception,", err);
+        res.json({ success: false, data: [] })
+    }
+}
+
 module.exports = {
     test,
     generateCodes,
     checkCode,
-    grantRole
+    grantRole,
+    getUserList
 }

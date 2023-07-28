@@ -7,5 +7,6 @@ router.get("/test", test);
 router.get("/generateCodes", generateCodes)
 router.get("/checkCode", checkCode);
 router.get("/grantRole", grantRole);
+router.get("/getUserList", getUserList);
 
 module.exports = router;

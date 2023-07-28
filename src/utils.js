@@ -54,6 +54,24 @@ const writeCodesFromFile = (json) => {
     // fs.writeFileSync(dataPath, JSON.stringify(json));
 }
 
+const getUserList = async () => {
+    try {
+        const guild = client.guilds.cache.get(SERVER_ID);
+        const members = await guild.members.fetch();
+        const member = members.map(item => item.user.username);
+        return {
+            success: true,
+            data: member
+        }
+    } catch (err) {
+        console.error("Error assigning role ", err);
+        return {
+            success: false,
+            data: [],
+        }
+    }
+}
+
 const assignRoleToUser = async (username) => {
     try {
         const guild = client.guilds.cache.get(SERVER_ID);
@@ -84,9 +102,10 @@ const assignRoleToUser = async (username) => {
             message: "You can't get the WL role. Please contact with the support team."
         }
     } catch (err) {
+        console.error("Error assigning role ", err);
         return {
             success: false,
-            message: client
+            message: "Exception error occured. Please try again later."
         }
     }
 }
