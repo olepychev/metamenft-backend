@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const { generateCodes, test, checkCode, grantRole } = require("./controller");
+const { generateCodes, test, checkCode, grantRole, getUserList } = require("./controller");
 
 router.get("/test", test);
 router.get("/generateCodes", generateCodes)
