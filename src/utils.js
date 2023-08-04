@@ -15,7 +15,7 @@ const client = new Client({
 });
 
 // MY DISCORD SETTING INFO
-const DISCORD_TOKEN = 'MTAyNTIzMzQ1ODM1MzY2ODEyNw.Gkc-sx.epnLxTfOYtmA5GYbYr42GkFSEidG-KzmlcudtI';
+const DISCORD_TOKEN = 'MTEzMzE0NzY2NTYzNTQ4NzkwOA.GAX1hS.ad8GNc7nn2meE-HVuKDT-Vut-RsRSqTlOZyT9M';
 const SERVER_ID = '1133139437086310430';
 const roleId = '1133142527642435764';
 
@@ -138,5 +138,6 @@ module.exports = {
     readCodesFromFile,
     writeCodesFromFile,
     assignRoleToUser,
-    hasRole
+    hasRole,
+    getUserList
 }
