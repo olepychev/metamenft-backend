@@ -1,5 +1,5 @@
 const voucher_codes = require("voucher-code-generator");
-const { writeCodesFromFile, readCodesFromFile, assignRoleToUser, hasRole, getUserList } = require("./utils");
+const { writeCodesFromFile, readCodesFromFile, assignRoleToUser, hasRole, getUserListFromSever } = require("./utils");
 
 const test = async (req, res) => {
     // const _discordName = req.query.name;
@@ -84,7 +84,7 @@ const grantRole = async (req, res) => {
 
 const getUserList = async (req, res) => {
     try {
-        const {success, data} = await getUserList();
+        const {success, data} = await getUserListFromSever();
         res.json({success, data: data});
     } catch (err) {
         console.log("grantRole exception,", err);

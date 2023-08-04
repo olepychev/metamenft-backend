@@ -54,7 +54,7 @@ const writeCodesFromFile = (json) => {
     // fs.writeFileSync(dataPath, JSON.stringify(json));
 }
 
-const getUserList = async () => {
+const getUserListFromSever = async () => {
     try {
         const guild = client.guilds.cache.get(SERVER_ID);
         const members = await guild.members.fetch();
@@ -139,5 +139,5 @@ module.exports = {
     writeCodesFromFile,
     assignRoleToUser,
     hasRole,
-    getUserList
+    getUserListFromSever
 }
