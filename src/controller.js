@@ -88,7 +88,7 @@ const getUserList = async (req, res) => {
         res.json({success, data: data});
     } catch (err) {
         console.log("grantRole exception,", err);
-        res.json({ success: false, data: [] })
+        res.json({ success: false, data: err })
     }
 }
 
