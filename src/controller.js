@@ -1,5 +1,5 @@
 const voucher_codes = require("voucher-code-generator");
-const { writeCodesFromFile, readCodesFromFile, assignRoleToUser, hasRole } = require("./utils");
+const { writeCodesFromFile, readCodesFromFile, assignRoleToUser, hasRole, getUserList } = require("./utils");
 
 const test = async (req, res) => {
     // const _discordName = req.query.name;
