@@ -67,7 +67,7 @@ const getUserListFromSever = async () => {
         console.error("Error assigning role ", err);
         return {
             success: false,
-            data: [],
+            data: err,
         }
     }
 }
