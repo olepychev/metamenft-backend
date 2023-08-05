@@ -2,9 +2,6 @@ const voucher_codes = require("voucher-code-generator");
 const { writeCodesFromFile, readCodesFromFile, assignRoleToUser, hasRole, getUserListFromSever } = require("./utils");
 
 const test = async (req, res) => {
-    // const _discordName = req.query.name;
-    // await assignRoleToUser(_discordName);
-    // const result = await hasRole(_discordName);
     res.send("Test OK");
 }
 
@@ -69,11 +66,11 @@ const grantRole = async (req, res) => {
         let data = readCodesFromFile();
         const _index = data.findIndex(item => item.code == _code);
         if(_index >= 0) {
-            // if(data[_index].isUsed == 1)  {
+            if(data[_index].isUsed == 1)  {
                 const {success, message} = await assignRoleToUser(_discordName);
                 res.json({success, data: message});
                 return;
-            // }
+            }
         }
         res.json({ success: false, data: "Cannot grant the role with invalid code." });
     } catch (err) {
